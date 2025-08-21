@@ -1,0 +1,16 @@
+<mvc:View controllerName="my.sapui5.act08.training.act08css.controller.ReviewPage"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Page id="idReviewPage" title="{i18n>reviewTitle}" floatingFooter="true">
+        <content>
+            <core:Fragment fragmentName="my.sapui5.act08.training.act08css.fragment.ShoppingCart" type="XML" />
+        </content>
+        <footer>
+            <OverflowToolbar id="idOFTFooterReview">
+                <ToolbarSpacer id="idTSpacerFooterReview"/>
+                <Button id="idBtnBack" text="{i18n>btnBack}" tooltip="{i18n>backTooltip}" press="onPressBack"/>
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>
