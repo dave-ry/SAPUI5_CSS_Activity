@@ -79,12 +79,21 @@
           "target": [
             "TargetMainCSSView"
           ]
+        },        
+        {
+          "name": "RouteReviewPage",
+          "pattern": "Review/{firstName}",
+          "target": ["TargetReviewPage"]
         }
       ],
       "targets": {
         "TargetMainCSSView": {
           "id": "MainCSSView",
           "name": "MainCSSView"
+        },        
+        "TargetReviewPage": {
+          "viewId": "ReviewPage",
+          "viewName": "ReviewPage"
         }
       }
     },
