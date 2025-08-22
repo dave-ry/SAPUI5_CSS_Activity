@@ -4,8 +4,20 @@
     xmlns:core="sap.ui.core"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}" floatingFooter="true">
+
+    <customHeader>
+        <Bar id="barHeader">
+            <contentLeft>
+                <Text id="txtHeader" text="{i18n>HeaderTextMain}">
+                </Text>
+            </contentLeft>
+        </Bar>
+    </customHeader>
+
     <VBox id="idVBox" class="sapUiSmallMargin">
-        <f:SimpleForm id="idSimpleForm" editable="true" layout="ResponsiveGridLayout" title="Details" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+        <f:SimpleForm id="idSimpleForm" editable="true" layout="ResponsiveGridLayout" title="Details" 
+            labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" 
+             emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
             <f:content>
                 <Label id="idLblFName" text="{i18n>firstNameLbl}" />
                 <Input id="idInptFName" value="" />
@@ -28,14 +40,23 @@
             </f:content>
         </f:SimpleForm>
 
+
         <!-- Shopping Cart list is moved to ShoppingCart.fragment.xml -->
-        <core:Fragment fragmentName="my.sapui5.act08.training.act08css.fragment.ShoppingCart" type="XML" />
-        
+        <core:Fragment fragmentName="my.sapui5.act08.training.act08css.fragment.ShoppingCart" type="XML" />        
+        <!-- Move the "Check Out" button before displaying the footer buttons for CSS Activity -->
+        <HBox width="100%" id="Hbox" direction="RowReverse">
+            <items>
+              <Button id="idBtnCheckout" text="{i18n>checkOut}" tooltip="{i18n>checkOut}" press="onPressCheckout"/>
+            </items>
+        </HBox>
     </VBox>
+
+    <!-- Additional buttons for CSS Activity -->
     <footer>
-        <OverflowToolbar id="idOFTFooter">
+        <OverflowToolbar id="idOFTFooter" >
             <ToolbarSpacer id="idTSpacerFooter"/>
-            <Button id="idBtnCheckout" text="{i18n>checkOut}" tooltip="{i18n>checkOut}" press="onPressCheckout"/>
+            <Button id="idBtnWelcome01"  text="{i18n>btnWelcome01}"    tooltip="{i18n>tooltipWelcome01}"   press="onPressNewBtn"/>
+            <Button id="idBtnWelcome02"  text="{i18n>btnWelcome02}"    tooltip="{i18n>tooltipWelcome02}"   press="onPressNewBtn"/>
         </OverflowToolbar>
     </footer>
 </Page>

@@ -37,5 +37,22 @@ function (Controller, MessageToast, History) {
                 oRouter.navTo("RouteMainCSSView", {}, true);
             }
         },        
+        
+        onPressNewBtn: function(){
+                if(!this.oDialog){
+                    this.oDialog = this.loadFragment({
+                        name: "my.sapui5.act08.training.act08css.fragment.Dialog"
+                    });
+                }
+
+                this.oDialog.then(function(oDialog){
+                    oDialog.open();
+                });    
+            },
+
+        onPressCloseDialog: function(){
+            this.getView().byId("idMsgDialog").close();
+
+        }
     });
 });

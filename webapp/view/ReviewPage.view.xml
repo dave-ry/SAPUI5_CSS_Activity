@@ -2,14 +2,31 @@
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m"
     xmlns:core="sap.ui.core">
-    <Page id="idReviewPage" title="{i18n>reviewTitle}" floatingFooter="true">
+    <Page id="idReviewPage" title="{i18n>reviewTitle}" floatingFooter="true">    
+    <customHeader>
+        <Bar id="barHdrReview">
+            <contentLeft>
+                <Text id="txtHdrReview" text="{i18n>HeaderTextRvw}">
+                </Text>
+            </contentLeft>
+        </Bar>
+    </customHeader>
         <content>
             <core:Fragment fragmentName="my.sapui5.act08.training.act08css.fragment.ShoppingCart" type="XML" />
         </content>
+        
+        <HBox width="100%" id="Hbox1" direction="RowReverse">
+            <items>
+                <Button id="idBtnBack" text="{i18n>btnBack}" tooltip="{i18n>backTooltip}" press="onPressBack"/>
+            </items>
+        </HBox>
         <footer>
             <OverflowToolbar id="idOFTFooterReview">
                 <ToolbarSpacer id="idTSpacerFooterReview"/>
-                <Button id="idBtnBack" text="{i18n>btnBack}" tooltip="{i18n>backTooltip}" press="onPressBack"/>
+                <!-- <Button id="idBtnBack" text="{i18n>btnBack}" tooltip="{i18n>backTooltip}" press="onPressBack"/> -->
+            <!-- Additional buttons for CSS Activity -->
+            <Button id="idBtnGoodbye01"  text="{i18n>btnGoodbye01}"    tooltip="{i18n>tooltipGoodbye01}"   press="onPressNewBtn"/>
+            <Button id="idBtnGoodbye02"  text="{i18n>btnGoodbye02}"    tooltip="{i18n>tooltipGoodbye02}"   press="onPressNewBtn"/>
             </OverflowToolbar>
         </footer>
     </Page>
