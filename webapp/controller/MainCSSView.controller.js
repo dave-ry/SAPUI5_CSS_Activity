@@ -6,6 +6,10 @@ sap.ui.define([
 
     return Controller.extend("my.sapui5.act08.training.act08css.controller.MainCSSView", {
         onInit() {
+            var oHeaderText = new sap.m.Text({
+                    text:  "Custom Header",
+                    class: "customHeaderText"
+                });
         },
 
         onAddItem: function (){
@@ -112,6 +116,7 @@ sap.ui.define([
                 }
 
                 this.oDialog.then(function(oDialog){
+                    // oDialog.addStyleClass("myCustomDialogBackground"); ::For exploration. Currently not working!
                     oDialog.open();
                 });    
             },
