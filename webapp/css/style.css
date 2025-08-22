@@ -1,1 +1,16 @@
 /* Enter your custom styles here */
+
+.customHeaderText {
+    color: #1a70f1;  /* Replace with your desired color */
+    font-weight: bold; /* Optional: Make it bold */
+}
+
+.customDialogHdrTxt {
+    color: #f7f8fa;  /* Replace with your desired color */
+    background-color: rgb(5, 117, 117);
+    font-weight: bold; /* Optional: Make it bold */
+}
+
+.customFooter {
+    background-color: rgb(119, 158, 243) !important;
+}
