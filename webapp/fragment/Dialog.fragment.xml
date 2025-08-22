@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m"
+xmlns:core="sap.ui.core">
+
+<Dialog id="idMsgDialog"  title="{i18n>dialogTitle}">
+    <Text id="idMessage"  text="{i18n>btnClickMsg}"></Text>
+    <beginButton>   
+        <Button id="idBtnMsgDialog" text="{i18n>dialogCloseButtonText}" type="Emphasized" press="onPressCloseDialog"/>
+    </beginButton>
+</Dialog>
+
+</core:FragmentDefinition>

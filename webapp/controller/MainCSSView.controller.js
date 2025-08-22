@@ -9,10 +9,6 @@ sap.ui.define([
         },
 
         onAddItem: function (){
-                // this.fnDisplayMsg("Add button pressed");
-                // var oTextBundle = this.getOwnerComponent().getModel("i18n").getResourceBundle();
-                // var sMsg = oTextBundle.getText("addButtonMsg");
-                // this.fnDisplayMsg(sMsg);
                 // Instantiate the fragment                
             if (!this.oDialog){
                 // By using loadFragment, we are adding the fragment as a dependent to the View
@@ -84,18 +80,6 @@ sap.ui.define([
             },
 
         onPressCheckout: function (){
-                // var oInputFNameValue = this.getView().byId("idInptFName").getValue();
-                // var oInputLNameValue = this.getView().byId("idInptLName").getValue(); 
-
-                // // Check if last name is blank
-                // if (oInputLNameValue === ""){
-                //     sap.m.MessageToast.show("Last Name is blank"); 
-                // }
-
-                // // Check if first name is blank
-                // if (oInputFNameValue === ""){
-                //     sap.m.MessageToast.show( "First Name is blank"); 
-                // }
                 var oInputFName = this.getView().byId("idInptFName");
                 var oInputLName = this.getView().byId("idInptLName");
                 var oInputFNameValue = oInputFName.getValue();
@@ -119,5 +103,22 @@ sap.ui.define([
 
                 }
             },
+
+        onPressNewBtn: function(){
+                if(!this.oDialog){
+                    this.oDialog = this.loadFragment({
+                        name: "my.sapui5.act08.training.act08css.fragment.Dialog"
+                    });
+                }
+
+                this.oDialog.then(function(oDialog){
+                    oDialog.open();
+                });    
+            },
+
+        onPressCloseDialog: function(){
+            this.getView().byId("idMsgDialog").close();
+        }
     });
 });
+
